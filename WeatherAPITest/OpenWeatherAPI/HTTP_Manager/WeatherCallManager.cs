@@ -18,8 +18,9 @@ namespace WeatherAPITest.OpenWeatherAPI.HTTP_Manager
 
         public string GetWeatherInfoByCityName(string CityName)
         {
-            var request = new RestRequest($"/data/2.5/weather?{WeatherApiConfig.CityMod}{CityName}" +
-                $"&{WeatherApiConfig.ApiKeyMod}{WeatherApiConfig.ApiKey}");
+            var request = new RestRequest("/data/2.5/weather?" + WeatherApiConfig.CityMod + CityName 
+                + "&" + WeatherApiConfig.ApiKeyMod + 
+                WeatherApiConfig.ApiKey);
             var response = client.Execute(request, Method.GET);
             return response.Content;
         }
