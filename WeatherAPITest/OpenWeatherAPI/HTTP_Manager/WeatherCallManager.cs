@@ -21,7 +21,9 @@ namespace WeatherAPITest.OpenWeatherAPI.HTTP_Manager
             var request = new RestRequest("/data/2.5/weather" + WeatherApiConfig.CityMod + CityName
                 + "&" + WeatherApiConfig.ApiKey);
             var response = client.Execute(request, Method.GET);
+            var headers = response.Headers;
             return response.Content;
+
         }
     }
 }

@@ -12,25 +12,44 @@ namespace WeatherAPITest.Tests
         private WeatherApiService service = new WeatherApiService("London");
 
         [Test]
-        public void TestCoordinates()
+        public void TestLongitude()
         {
-
-            Console.WriteLine(service.JSONObject);
             // Checking Longitute
             Assert.AreEqual(-0.13, service.WeatherDTO.WeatherAPIRoots.Coord.Lon);
+        }
+        [Test]
+        public void TestLatitude()
+        {
             // Checking Latitude
             Assert.AreEqual(51.51, service.WeatherDTO.WeatherAPIRoots.Coord.Lat);
         }
 
         [Test]
-        public void TestWeatherInfo()
+        public void TestInstanceOfWeatherID()
         {
             // Check ID
             Assert.IsInstanceOf(typeof(int), service.WeatherDTO.WeatherAPIRoots.Weather[0].Id);
+            
+        }
+
+        [Test]
+        public void TestInstanceOfWeatherMain()
+        {
             // Check Main Property
             Assert.IsInstanceOf(typeof(string), service.WeatherDTO.WeatherAPIRoots.Weather[0].Main);
+        }
+
+        [Test]
+        public void TestInstanceOfWeatherDescription()
+        {
             // Check Description
             Assert.IsInstanceOf(typeof(string), service.WeatherDTO.WeatherAPIRoots.Weather[0].Description);
+           
+        }
+
+        [Test]
+        public void TestInstanceOfWeatherIcon()
+        {
             // Check Icon
             Assert.IsInstanceOf(typeof(string), service.WeatherDTO.WeatherAPIRoots.Weather[0].Icon);
         }
@@ -42,12 +61,31 @@ namespace WeatherAPITest.Tests
         }
 
         [Test]
-        public void TestMain()
+        public void TestInstanceOfMainTemp()
         {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Main.Temp);
+        }
+        [Test]
+        public void TestInstanceOfMainPressure()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Main.Pressure);
+        }
+
+        [Test]
+        public void TestInstanceOfMainHumidity()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Main.Humidity);
+        }
+
+        [Test]
+        public void TestInstanceOfMainTempMin()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Main.Temp_min);
+        }
+
+        [Test]
+        public void TestInstanceOfMainTempMax()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Main.Temp_max);
         }
 
