@@ -63,9 +63,11 @@ namespace WeatherAPITest.OpenWeatherAPI.Data_Handling
     {
         private double speed;
         private double deg;
+        private double gust;
 
         public double Speed { get; set; }
         public double Deg { get; set; }
+        public double Gust { get => gust; set => gust = value; }
     }
 
     class Clouds
