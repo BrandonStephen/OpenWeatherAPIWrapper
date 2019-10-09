@@ -25,6 +25,19 @@ namespace WeatherAPITest.Tests
         }
 
         [Test]
+        public void TestLongitudeNotNull()
+        {
+            // Checking Longitute
+            Assert.IsNotNull(service.WeatherDTO.WeatherAPIRoots.Coord.Lon);
+        }
+        [Test]
+        public void TestLatitudeNotNull()
+        {
+            // Checking Latitude
+            Assert.IsNotNull(service.WeatherDTO.WeatherAPIRoots.Coord.Lat);
+        }
+
+        [Test]
         public void TestInstanceOfWeatherID()
         {
             // Check ID
@@ -55,6 +68,36 @@ namespace WeatherAPITest.Tests
         }
 
         [Test]
+        public void TestInstanceOfWeatherIDNotNull()
+        {
+            // Check ID
+            Assert.IsNotNull(service.WeatherDTO.WeatherAPIRoots.Weather[0].Id);
+
+        }
+
+        [Test]
+        public void TestInstanceOfWeatherMainNotNull()
+        {
+            // Check Main Property
+            Assert.IsNotNull(service.WeatherDTO.WeatherAPIRoots.Weather[0].Main);
+        }
+
+        [Test]
+        public void TestInstanceOfWeatherDescriptionNotNull()
+        {
+            // Check Description
+            Assert.IsNotNull(service.WeatherDTO.WeatherAPIRoots.Weather[0].Description);
+
+        }
+
+        [Test]
+        public void TestInstanceOfWeatherIconNotnull()
+        {
+            // Check Icon
+            Assert.IsNotNull(service.WeatherDTO.WeatherAPIRoots.Weather[0].Icon);
+        }
+
+        [Test]
         public void TestBase()
         {
             Assert.AreEqual("stations", service.WeatherDTO.WeatherAPIRoots.Base);
@@ -78,6 +121,12 @@ namespace WeatherAPITest.Tests
         }
 
         [Test]
+        public void TestMainHumidityAboveZero()
+        {
+            Assert.Greater(service.WeatherDTO.WeatherAPIRoots.Main.Humidity, 0.0);
+        }
+
+        [Test]
         public void TestInstanceOfMainTempMin()
         {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Main.Temp_min);
@@ -96,10 +145,21 @@ namespace WeatherAPITest.Tests
         }
 
         [Test]
-        public void TestWind()
+        public void TestInstanceOfWindSpeed()
         {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Wind.Speed);
+            
+        }
+
+        [Test]
+        public void TestInstanceOfWindDeg()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Wind.Deg);
+        }
+
+        [Test]
+        public void TestInstanceOfWindGust()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Wind.Gust);
         }
 
@@ -116,13 +176,38 @@ namespace WeatherAPITest.Tests
         }
 
         [Test]
-        public void TestSys()
+        public void TestInstanceOfSysType()
         {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Sys.Type);
+        }
+
+        [Test]
+        public void TestInstanceOfSysId()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Sys.Id);
+        }
+
+        [Test]
+        public void TestInstanceOfSysMessage()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Sys.Message);
+        }
+
+        [Test]
+        public void TestInstanceOfSysCountry()
+        {
             Assert.IsInstanceOf(typeof(string), service.WeatherDTO.WeatherAPIRoots.Sys.Country);
+        }
+
+        [Test]
+        public void TestInstanceOfSysSunrise()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Sys.Sunrise);
+        }
+
+        [Test]
+        public void TestInstanceOfSysSunset()
+        {
             Assert.IsInstanceOf(typeof(double), service.WeatherDTO.WeatherAPIRoots.Sys.Sunset);
         }
 
@@ -133,9 +218,15 @@ namespace WeatherAPITest.Tests
         }
 
         [Test]
-        public void TestStatus()
+        public void TestStatusIs200()
         {
             Assert.AreEqual(200, service.WeatherDTO.WeatherAPIRoots.Cod);
+        }
+
+        [Test]
+        public void TestCaseIsNot403()
+        {
+            Assert.AreNotEqual(403, service.WeatherDTO.WeatherAPIRoots.Cod);
         }
 
         [Test]
