@@ -8,7 +8,7 @@ namespace WeatherAPITest.OpenWeatherAPI.Data_Handling
 {
     class WeatherAPIRoots
     {
-        public Coords Coords { get; set; }
+        public Coord Coord { get; set; }
         public List<Weather> Weather { get; set; }
         public string @Base { get; set; }
         public Main Main { get; set; }
@@ -23,12 +23,12 @@ namespace WeatherAPITest.OpenWeatherAPI.Data_Handling
         public int @Cod { get; set; }
     }
 
-    class Coords
+    class Coord
     {
-        private double ion;
+        private double lon;
         private double lat;
 
-        public double Ion { get; set; }
+        public double Lon { get; set; }
         public double Lat { get; set; }
     }
 
@@ -39,13 +39,12 @@ namespace WeatherAPITest.OpenWeatherAPI.Data_Handling
         private string description;
         private string icon;
 
-        public int Id { get; set; }
-        public string Main { get; set; }
-        public string Description { get; set; }
-        public string Icon { get; set; }
+        public int Id { get => id; set => id = value; }
+        public string Main { get => main; set => main = value; }
+        public string Description { get => description; set => description = value; }
+        public string Icon { get => icon; set => icon = value; }
     }
-
-    class Main
+        class Main
     {
         private double temp;
         private double pressure;

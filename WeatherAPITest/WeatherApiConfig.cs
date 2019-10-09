@@ -11,7 +11,6 @@ namespace WeatherAPITest
     {
         public static readonly String BaseUrl = ConfigurationManager.AppSettings["baseURL"];
         public static readonly String ApiKey = ConfigurationManager.AppSettings["apiKey"];
-        public static readonly String ApiKeyMod = ConfigurationManager.AppSettings["apiKeyMod"];
         public static readonly String CityMod = ConfigurationManager.AppSettings["cityMod"];
     }
 }
