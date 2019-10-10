@@ -12,6 +12,16 @@ The first thing you will have to do is navigate to the App.settings file and upd
 - RestSharp
 - NUnit
 - NUnit3Adapter
+- Newtonsoft
+
+# Classes Used
+
+- WeatherApiConfig 
+- WeatherApiHeaderModel
+- WeatherApiModel
+- WeatherDTO
+- WeatherCallManager
+- WeatherApiService
 
 # What is already being tested? 
 
