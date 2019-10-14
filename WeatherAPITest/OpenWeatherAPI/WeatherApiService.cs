@@ -18,6 +18,12 @@ namespace WeatherAPITest.OpenWeatherAPI
         public WeatherCallManager WeatherCallManager = new WeatherCallManager();
 
         // JSON Object
-        public JObject JSONObject;
+        public JObject JSONObject { get; set; }
+
+        public WeatherApiService(string city)
+        {
+            WeatherDTO.Deserialization(WeatherCallManager.GetWeatherInfoByCityName(city));
+            JSONObject = JObject.Parse(WeatherCallManager.GetWeatherInfoByCityName(city));
+        }
     }
 }

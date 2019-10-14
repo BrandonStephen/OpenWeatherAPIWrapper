@@ -8,88 +8,89 @@ namespace WeatherAPITest.OpenWeatherAPI.Data_Handling
 {
     class WeatherAPIRoots
     {
-        public Coords coords { get; set; }
-        public Weather weather { get; set; }
-        public string @base { get; set; }
-        public Main main { get; set; }
-        public string @visibility { get; set; }
-        public Wind wind { get; set; }
-        public Clouds clouds { get; set; }
-        public string @dt { get; set; }
-        public Sys sys { get; set; }
-        public string @timezone { get; set; }
-        public string @id { get; set; }
-        public string @name { get; set; }
-        public string @cod { get; set; }
+        public Coord Coord { get; set; }
+        public List<Weather> Weather { get; set; }
+        public string @Base { get; set; }
+        public Main Main { get; set; }
+        public double @Visibility { get; set; }
+        public Wind Wind { get; set; }
+        public Clouds Clouds { get; set; }
+        public double @Dt { get; set; }
+        public Sys Sys { get; set; }
+        public int @Timezone { get; set; }
+        public int @Id { get; set; }
+        public string @Name { get; set; }
+        public int @Cod { get; set; }
     }
 
-    class Coords
+    class Coord
     {
-        private string ion;
-        private string lat;
+        private double lon;
+        private double lat;
 
-        public string Ion { get => ion; set => ion = value; }
-        public string Lat { get => lat; set => lat = value; }
+        public double Lon { get; set; }
+        public double Lat { get; set; }
     }
 
     class Weather
     {
-        private string id;
+        private int id;
         private string main;
         private string description;
         private string icon;
 
-        public string Id { get => id; set => id = value; }
+        public int Id { get => id; set => id = value; }
         public string Main { get => main; set => main = value; }
         public string Description { get => description; set => description = value; }
         public string Icon { get => icon; set => icon = value; }
     }
-
-    class Main
+        class Main
     {
-        private string temp;
-        private string pressure;
-        private string humidity;
-        private string temp_min;
-        private string temp_max;
+        private double temp;
+        private double pressure;
+        private double humidity;
+        private double temp_min;
+        private double temp_max;
 
-        public string Temp { get => temp; set => temp = value; }
-        public string Pressure { get => pressure; set => pressure = value; }
-        public string Humidity { get => humidity; set => humidity = value; }
-        public string Temp_min { get => temp_min; set => temp_min = value; }
-        public string Temp_max { get => temp_max; set => temp_max = value; }
+        public double Temp { get => temp; set => temp = value; }
+        public double Pressure { get => pressure; set => pressure = value; }
+        public double Humidity { get => humidity; set => humidity = value; }
+        public double Temp_min { get => temp_min; set => temp_min = value; }
+        public double Temp_max { get => temp_max; set => temp_max = value; }
     }
 
     class Wind
     {
-        private string speed;
-        private string deg;
+        private double speed;
+        private double deg;
+        private double gust;
 
-        public string Speed { get => speed; set => speed = value; }
-        public string Deg { get => deg; set => deg = value; }
+        public double Speed { get; set; }
+        public double Deg { get; set; }
+        public double Gust { get => gust; set => gust = value; }
     }
 
     class Clouds
     {
-        private string all;
+        private double all;
 
-        public string All { get => all; set => all = value; }
+        public double All { get; set; }
     }
 
     class Sys
     {
-        private string type;
-        private string id;
-        private string message;
+        private double type;
+        private double id;
+        private double message;
         private string country;
-        private string sunrise;
-        private string sunset;
+        private double sunrise;
+        private double sunset;
 
-        public string Type { get => type; set => type = value; }
-        public string Id { get => id; set => id = value; }
-        public string Message { get => message; set => message = value; }
+        public double Type { get => type; set => type = value; }
+        public double Id { get => id; set => id = value; }
+        public double Message { get => message; set => message = value; }
         public string Country { get => country; set => country = value; }
-        public string Sunrise { get => sunrise; set => sunrise = value; }
-        public string Sunset { get => sunset; set => sunset = value; }
+        public double Sunrise { get => sunrise; set => sunrise = value; }
+        public double Sunset { get => sunset; set => sunset = value; }
     }
 }
